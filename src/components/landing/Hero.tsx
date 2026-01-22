@@ -58,9 +58,8 @@ export const Hero = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="mx-auto mb-8 max-w-2xl text-base text-muted-foreground md:text-xl px-4"
           >
-            Point-in-Time LLMs for financial AI. Eliminate lookahead bias and get 
-            more reliable backtesting results based on information that was actually available 
-            at the time of AI decision.
+            Point-in-Time LLMs for financial AI. Eliminate <b>lookahead bias</b> and get 
+            more reliable backtesting results.
           </motion.p>
 
           {/* Stats */}
