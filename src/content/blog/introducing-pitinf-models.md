@@ -8,8 +8,6 @@ featured: true
 author: "PiT-Inference Team"
 ---
 
-# Introducing Pitinf Models: Point-in-Time LLMs for Finance
-
 As financial firms rush to adopt LLMs for signal generation, research, and portfolio construction, a critical question has emerged:
 
 **How do we deploy language models in finance without leaking future market information?**
