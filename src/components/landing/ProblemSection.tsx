@@ -4,7 +4,7 @@ import { AlertTriangle, TrendingUp, Clock, Brain } from "lucide-react";
 const problems = [
   {
     icon: Brain,
-    title: "Pretraining Leakage",
+    title: "Look-Ahead Bias",
     description:
       "Standard LLMs are trained on internet-scale data that extends past backtest cutoffs. What looks like intelligence is often recall.",
   },
