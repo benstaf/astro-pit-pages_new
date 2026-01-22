@@ -64,7 +64,7 @@ export const Footer = () => {
             <h3 className="mb-4 text-2xl font-bold">Contact Us</h3>
             <div className="mb-4 space-y-2">
               <p className="text-muted-foreground">
-                1 Sansome St, Suite 1400<br />
+                One Sansome Street, Suite 1400<br />
                 San Francisco, CA 94104
               </p>
               <a 
