@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import { motion, animate, useMotionValue } from "framer-motion";
+import { useState } from "react";
+import { motion } from "framer-motion";
 import {
   BarChart,
   Bar,
@@ -14,8 +14,11 @@ import {
 import { Button } from "@/components/ui/button";
 
 /**
- * Look-Ahead-Bench — exact results from the paper
- * Alpha values are in percentage points (pp)
+ * Values taken directly from Table 1 of the paper:
+ * "Look-Ahead-Bench: a Standardized Benchmark of Look-ahead Bias in PiT LLMs"
+ *
+ * Alpha is measured in percentage points (pp)
+ * Alpha Decay = Alpha_P2 - Alpha_P1
  */
 
 const benchmarkData = [
@@ -63,37 +66,14 @@ const benchmarkData = [
   },
 ];
 
-type ViewMode = "decay" | "collapse";
+type ViewMode = "decay" | "comparison";
 
 export const BenchmarkChart = () => {
   const [viewMode, setViewMode] = useState<ViewMode>("decay");
 
-  /**
-   * progress = 0 → P1 (in-sample)
-   * progress = 1 → P2 (out-of-sample)
-   */
-  const progress = useMotionValue(0);
-
-  useEffect(() => {
-    animate(progress, viewMode === "collapse" ? 1 : 0, {
-      duration: 1.6, // slower = more cinematic for landing page
-      ease: "easeInOut",
-    });
-  }, [viewMode, progress]);
-
-  /**
-   * Interpolated alpha for animated collapse
-   */
-  const animatedData = benchmarkData.map((d) => {
-    const p = progress.get();
-    return {
-      ...d,
-      animatedAlpha: d.alphaP1 + p * (d.alphaP2 - d.alphaP1),
-    };
-  });
-
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (!active || !payload?.length) return null;
+
     const d = payload[0].payload;
 
     return (
@@ -115,13 +95,13 @@ export const BenchmarkChart = () => {
         ) : (
           <div className="space-y-1 text-sm">
             <p className="text-muted-foreground">
-              In-Sample (P1):{" "}
+              In-Sample Alpha (P1):{" "}
               <span className="font-mono font-bold text-primary">
                 {d.alphaP1.toFixed(2)} pp
               </span>
             </p>
             <p className="text-muted-foreground">
-              Out-of-Sample (P2):{" "}
+              Out-of-Sample Alpha (P2):{" "}
               <span className="font-mono font-bold text-accent">
                 {d.alphaP2.toFixed(2)} pp
               </span>
@@ -146,49 +126,35 @@ export const BenchmarkChart = () => {
           className="mx-auto mb-12 max-w-3xl text-center"
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-wider text-primary">
-            Look-Ahead-Bench
+            Look-Ahead-Bench Results
           </span>
           <h2 className="mb-6 text-3xl font-bold md:text-5xl">
-            When Models Leave{" "}
-            <span className="gradient-text">Memorized History</span>
+            Measuring <span className="gradient-text">Alpha Decay</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Models that look brilliant in backtests can collapse when markets
-            move beyond their training data. This chart shows why.
+            Standard LLMs exhibit severe performance collapse when evaluated
+            out-of-sample, while Point-in-Time (PiT) models maintain — and even
+            improve — alpha as they scale.
           </p>
         </motion.div>
 
         {/* Toggle */}
-        <div className="mb-2 flex justify-center gap-2">
+        <div className="mb-8 flex justify-center gap-2">
           <Button
             size="sm"
             variant={viewMode === "decay" ? "default" : "outline"}
             onClick={() => setViewMode("decay")}
           >
-            Why Standard LLMs Fail
+            Alpha Decay
           </Button>
           <Button
             size="sm"
-            variant={viewMode === "collapse" ? "default" : "outline"}
-            onClick={() => setViewMode("collapse")}
+            variant={viewMode === "comparison" ? "default" : "outline"}
+            onClick={() => setViewMode("comparison")}
           >
-            What Happens After Cutoff
+            P1 vs P2 Alpha
           </Button>
         </div>
-
-        {/* Guided narration */}
-        <p className="mb-6 text-center text-sm text-muted-foreground">
-          Watch what happens when models move from memorized history to unseen
-          markets.
-        </p>
-
-        {/* Timeline */}
-        {viewMode === "collapse" && (
-          <div className="mx-auto mb-2 flex max-w-4xl justify-between text-xs text-muted-foreground">
-            <span>P1 — 2021 (In-Sample)</span>
-            <span>P2 — 2024 (Out-of-Sample)</span>
-          </div>
-        )}
 
         {/* Chart */}
         <motion.div
@@ -208,7 +174,10 @@ export const BenchmarkChart = () => {
                   textAnchor="end"
                   height={90}
                 />
-                <YAxis domain={[-25, 5]} tickFormatter={(v) => `${v} pp`} />
+                <YAxis
+                  domain={[-25, 5]}
+                  tickFormatter={(v) => `${v} pp`}
+                />
                 <Tooltip content={<CustomTooltip />} />
                 <ReferenceLine y={0} strokeDasharray="3 3" />
                 <Bar dataKey="decay" radius={[4, 4, 0, 0]}>
@@ -225,7 +194,7 @@ export const BenchmarkChart = () => {
                 </Bar>
               </BarChart>
             ) : (
-              <BarChart data={animatedData} margin={{ bottom: 70 }}>
+              <BarChart data={benchmarkData} margin={{ bottom: 70 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis
                   dataKey="name"
@@ -235,19 +204,16 @@ export const BenchmarkChart = () => {
                 />
                 <YAxis tickFormatter={(v) => `${v} pp`} />
                 <Tooltip content={<CustomTooltip />} />
-                <ReferenceLine y={0} strokeDasharray="3 3" />
-                <Bar dataKey="animatedAlpha" radius={[4, 4, 0, 0]}>
-                  {animatedData.map((d, i) => (
-                    <Cell
-                      key={i}
-                      fill={
-                        d.isPiT
-                          ? "hsl(var(--accent))"
-                          : "hsl(var(--destructive))"
-                      }
-                    />
-                  ))}
-                </Bar>
+                <Bar
+                  dataKey="alphaP1"
+                  name="P1 Alpha"
+                  fill="hsl(var(--primary))"
+                />
+                <Bar
+                  dataKey="alphaP2"
+                  name="P2 Alpha"
+                  fill="hsl(var(--accent))"
+                />
               </BarChart>
             )}
           </ResponsiveContainer>
@@ -265,12 +231,12 @@ export const BenchmarkChart = () => {
             The Scaling Paradox
           </h3>
           <p className="text-sm text-muted-foreground">
-            Scaling standard models amplifies memorization — and magnifies
-            failure when regimes change.
+            Standard models suffer <strong>inverse scaling</strong>: larger
+            models memorize more and collapse harder out-of-sample.
             <br />
             <br />
-            Point-in-Time models remove future knowledge, allowing scale to
-            improve real reasoning instead.
+            PiT models remove future memory, allowing scale to translate into
+            genuine reasoning and improved generalization.
           </p>
         </motion.div>
       </div>
