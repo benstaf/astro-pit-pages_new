@@ -58,7 +58,7 @@ export const Hero = () => {
             Point-In-Time {" "}
             <span className="gradient-text">Inference</span>
             <br />
-            for Financial AI
+            for AI in Finance
           </motion.h1>
 
           {/* Subheadline */}
@@ -101,14 +101,37 @@ export const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
-            <Button size="lg" className="group bg-primary px-8 hover:bg-primary/90">
-              Get API Access
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Button>
-            <Button size="lg" variant="outline" className="group px-8">
-              <Play className="mr-2 h-4 w-4" />
-              See Benchmark Results
-            </Button>
+            <Button
+  asChild
+  size="lg"
+  className="group bg-primary px-8 hover:bg-primary/90"
+>
+  <a
+    href="https://forms.gle/GmyGEhxESSrNBTVP8"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Get API Access
+    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+  </a>
+</Button>
+
+<Button
+  asChild
+  size="lg"
+  variant="outline"
+  className="group px-8"
+>
+  <a
+    href="https://github.com/benstaf/lookaheadbench"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <Play className="mr-2 h-4 w-4" />
+    See Benchmark Results
+  </a>
+</Button>
+
           </motion.div>
 
           {/* Trust Indicators */}
