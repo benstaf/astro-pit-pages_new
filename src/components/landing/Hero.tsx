@@ -55,10 +55,10 @@ export const Hero = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mb-6 text-4xl font-bold leading-tight md:text-6xl lg:text-7xl"
           >
-            AI That Doesn't{" "}
-            <span className="gradient-text">Cheat</span>
+            Point-In-Time {" "}
+            <span className="gradient-text">Inference</span>
             <br />
-            With The Future
+            for Financial AI
           </motion.h1>
 
           {/* Subheadline */}
