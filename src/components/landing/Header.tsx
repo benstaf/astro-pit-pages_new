@@ -23,8 +23,8 @@ export const Header = () => {
     >
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <a href="/" className="flex items-center gap-2">
+          {/* Logo - Centered on mobile */}
+          <a href="/" className="flex items-center gap-2 md:flex-none absolute left-1/2 -translate-x-1/2 md:relative md:left-auto md:translate-x-0">
             <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary">
               <span className="font-mono text-sm font-bold text-primary-foreground">Pi</span>
             </div>
@@ -67,7 +67,7 @@ export const Header = () => {
           {/* Mobile Menu Toggle */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="text-foreground md:hidden"
+            className="text-foreground md:hidden relative z-10"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
