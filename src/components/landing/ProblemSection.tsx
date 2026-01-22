@@ -92,16 +92,16 @@ export const ProblemSection = () => {
               </div>
               <div className="space-y-3">
                 <div className="flex items-center justify-between rounded-lg bg-secondary/50 p-3">
-                  <span className="text-sm">DeepSeek-V3</span>
+                  <span className="text-sm">DeepSeek-V3.2</span>
                   <span className="font-mono text-destructive">-21.77pp</span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg bg-secondary/50 p-3">
-                  <span className="text-sm">GPT-4o</span>
-                  <span className="font-mono text-destructive">-13.83pp</span>
+                  <span className="text-sm">Llama-3.1-70B</span>
+                  <span className="font-mono text-destructive">-15.25pp</span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg bg-secondary/50 p-3">
-                  <span className="text-sm">Llama-3-70B</span>
-                  <span className="font-mono text-destructive">-19.56pp</span>
+                  <span className="text-sm">Llama-3.1-8B</span>
+                  <span className="font-mono text-destructive">-17.23pp</span>
                 </div>
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
