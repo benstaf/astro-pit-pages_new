@@ -22,9 +22,9 @@ const problems = [
   },
   {
     icon: Clock,
-    title: "Broken Time Boundaries",
+    title: "Already Seen It",
     description:
-      "Chronological splits don’t matter if the model already knows what happens next. Temporal isolation is already violated.",
+      "Chronological splits don’t matter in backtesting, if the LLM used already knows what happens next.",
   },
 ];
 
@@ -49,8 +49,8 @@ export const ProblemSection = () => {
             Your LLM Is <span className="gradient-text">Remembering</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Backtests assume the model hasn’t seen the evaluation period.
-            Pretrained LLMs break that assumption. The result isn’t prediction—
+            Backtests assume the evaluation period is unseen.
+            Standard pretrained LLMs break that assumption. The result isn’t prediction—
             it’s recall disguised as alpha.
           </p>
         </motion.div>
