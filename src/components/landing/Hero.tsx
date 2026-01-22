@@ -35,10 +35,9 @@ export const Hero = () => {
         ))}
       </div>
 
-      <div className="container relative mx-auto px-4 py-24 md:py-32">
+      <div className="container relative mx-auto px-6 py-24 md:py-32">
         <div className="mx-auto max-w-4xl text-center">
           
-
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -57,7 +56,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground md:text-xl"
+            className="mx-auto mb-8 max-w-2xl text-base text-muted-foreground md:text-xl px-4"
           >
             Point-in-Time LLMs for financial AI. Eliminate lookahead bias and get 
             more reliable backtesting results based on information that was actually available 
@@ -69,16 +68,16 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="mb-10 flex flex-wrap items-center justify-center gap-8 text-sm"
+            className="mb-10 flex flex-col items-center justify-center gap-4 text-xs sm:text-sm sm:flex-row sm:flex-wrap sm:gap-8 px-4"
           >
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-destructive" />
+            <div className="flex items-center gap-2 flex-wrap justify-center">
+              <div className="h-2 w-2 rounded-full bg-destructive flex-shrink-0" />
               <span className="text-muted-foreground">Standard LLMs:</span>
               <span className="font-mono font-bold text-destructive">-21.77pp</span>
               <span className="text-muted-foreground">alpha decay</span>
             </div>
-            <div className="flex items-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-accent" />
+            <div className="flex items-center gap-2 flex-wrap justify-center">
+              <div className="h-2 w-2 rounded-full bg-accent flex-shrink-0" />
               <span className="text-muted-foreground">PiT Models:</span>
               <span className="font-mono font-bold text-accent">+0.47pp</span>
               <span className="text-muted-foreground">stable alpha</span>
@@ -90,39 +89,38 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+            className="flex flex-col items-center justify-center gap-3 px-4 sm:flex-row sm:gap-4"
           >
             <Button
-  asChild
-  size="lg"
-  className="group bg-primary px-8 hover:bg-primary/90"
->
-  <a
-    href="https://forms.gle/GmyGEhxESSrNBTVP8"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    Get API Access
-    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-  </a>
-</Button>
+              asChild
+              size="lg"
+              className="group bg-primary hover:bg-primary/90 w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8"
+            >
+              <a
+                href="https://forms.gle/GmyGEhxESSrNBTVP8"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Get API Access
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
 
-<Button
-  asChild
-  size="lg"
-  variant="outline"
-  className="group px-8"
->
-  <a
-    href="https://github.com/benstaf/lookaheadbench"
-    target="_blank"
-    rel="noopener noreferrer"
-  >
-    <Play className="mr-2 h-4 w-4" />
-    See Benchmark Results
-  </a>
-</Button>
-
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="group w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8"
+            >
+              <a
+                href="https://github.com/benstaf/lookaheadbench"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Play className="mr-2 h-4 w-4" />
+                Benchmark Results
+              </a>
+            </Button>
           </motion.div>
 
           
