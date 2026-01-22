@@ -4,23 +4,27 @@ import { AlertTriangle, TrendingUp, Clock, Brain } from "lucide-react";
 const problems = [
   {
     icon: Brain,
-    title: "Training Data Contamination",
-    description: "Standard LLMs are trained on data including future market outcomes, creating artificial 'knowledge' of events that haven't happened yet.",
+    title: "Pretraining Leakage",
+    description:
+      "Standard LLMs are trained on internet-scale data that extends past backtest cutoffs. What looks like intelligence is often recall.",
   },
   {
     icon: TrendingUp,
-    title: "Inflated Backtest Results",
-    description: "When tested on historical data, contaminated models show impossibly good results that won't replicate in live trading.",
+    title: "Fake Alpha",
+    description:
+      "Models look brilliant in backtests because the test period overlaps with their training history. Performance collapses live.",
   },
   {
     icon: AlertTriangle,
-    title: "The Scaling Paradox",
-    description: "Larger models perform worse on out-of-sample data. A 70B parameter model can lose more alpha than a 7B model.",
+    title: "Bigger Models, Bigger Losses",
+    description:
+      "Scaling increases memorization. Larger models often show higher backtest alpha—and faster out-of-sample decay.",
   },
   {
     icon: Clock,
-    title: "Temporal Information Leakage",
-    description: "Models inadvertently 'remember' future price movements, earnings surprises, and market events from their training data.",
+    title: "Broken Time Boundaries",
+    description:
+      "Chronological splits don’t matter if the model already knows what happens next. Temporal isolation is already violated.",
   },
 ];
 
@@ -28,7 +32,7 @@ export const ProblemSection = () => {
   return (
     <section id="problem" className="relative py-24 md:py-32">
       <div className="absolute inset-0 glow-bg opacity-50" />
-      
+
       <div className="container relative mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -42,12 +46,12 @@ export const ProblemSection = () => {
             The Problem
           </span>
           <h2 className="mb-6 text-3xl font-bold md:text-5xl">
-            Your LLM Is <span className="gradient-text">Cheating</span>
+            Your LLM Is <span className="gradient-text">Remembering</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Standard LLMs trained on internet data have seen the future. They memorize 
-            market outcomes, earnings reports, and price movements—then pretend to 
-            "predict" them during evaluation.
+            Backtests assume the model hasn’t seen the evaluation period.
+            Pretrained LLMs break that assumption. The result isn’t prediction—
+            it’s recall disguised as alpha.
           </p>
         </motion.div>
 
