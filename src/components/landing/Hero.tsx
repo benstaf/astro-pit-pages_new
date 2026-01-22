@@ -37,16 +37,7 @@ export const Hero = () => {
 
       <div className="container relative mx-auto px-4 py-24 md:py-32">
         <div className="mx-auto max-w-4xl text-center">
-          {/* Badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-2"
-          >
-            <Sparkles className="h-4 w-4 text-primary" />
-            <span className="text-sm text-primary">Introducing Look-Ahead-Bench</span>
-          </motion.div>
+          
 
           {/* Headline */}
           <motion.h1
@@ -134,24 +125,7 @@ export const Hero = () => {
 
           </motion.div>
 
-          {/* Trust Indicators */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.6 }}
-            className="mt-16 border-t border-border/50 pt-8"
-          >
-            <p className="mb-4 text-xs uppercase tracking-wider text-muted-foreground">
-              Built on rigorous academic research
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-8 text-muted-foreground">
-              <span className="font-mono text-sm">Look-Ahead-Bench</span>
-              <span className="text-border">|</span>
-              <span className="font-mono text-sm">35+ Models Tested</span>
-              <span className="text-border">|</span>
-              <span className="font-mono text-sm">6 Financial Tasks</span>
-            </div>
-          </motion.div>
+          
         </div>
       </div>
     </section>
