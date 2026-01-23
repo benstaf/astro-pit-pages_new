@@ -26,12 +26,13 @@ const models = [
     icon: Gauge,
     description:
       "Reliable model for basic reasoning tasks, research workflows, and general financial analysis.",
-    features: [
-      "Basic reasoning capabilities",
-      "Good price–performance balance",
-      "Suitable for research & analysis",
-      "Custom cutoff date",
-    ],
+   features: [
+  "Frontier-level reasoning",
+  "Agentic workflows & tool orchestration",
+  "No memorization bias",
+  "Institutional-grade performance",
+  "Custom cutoff date",
+   ],
     highlight: false,
     cta: "Choose Medium",
   },
@@ -41,8 +42,7 @@ const models = [
     note: "Output tokens free",
     icon: Rocket,
     description:
-      "State-of-the-art reasoning capabilities designed for complex financial analysis, without memorization bias.",
-    features: [
+  "State-of-the-art reasoning model for complex financial analysis and agentic workflows, without memorization bias.",
       "Frontier-level reasoning",
       "No memorization bias",
       "Institutional-grade performance",
