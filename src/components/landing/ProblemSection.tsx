@@ -6,7 +6,7 @@ const problems = [
     icon: Brain,
     title: "Temporal Leakage",
     description:
-      "Standard LLMs are trained on internet-scale data that extends past backtest cutoffs. What looks like intelligence is often recall.",
+      "Standard LLMs are trained on internet-scale data that extends past backtest cutoffs. What looks like intelligence is often memorization.",
   },
   {
     icon: Clock,
