@@ -22,9 +22,9 @@ const problems = [
   },
   {
     icon: Clock,
-    title: "Already Seen It",
+    title: "Temporal Leakage",
     description:
-      "Chronological splits don’t matter in backtesting, if the LLM used already knows what happens next.",
+      "Chronological splits don’t matter in backtesting, if the LLM used already knows what happened next.",
   },
 ];
 
