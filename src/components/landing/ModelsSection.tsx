@@ -5,51 +5,57 @@ import { Button } from "@/components/ui/button";
 const models = [
   {
     name: "Pitinf-Small",
-    size: "<10B params",
+    price: "$10 / MTokens input",
+    note: "Output tokens free",
     icon: Zap,
-    description: "Lightning-fast inference for high-frequency trading signals and real-time decision making.",
+    description:
+      "Ultra-low latency model designed for lightweight inference and cost-sensitive workloads.",
     features: [
-      "Sub-100ms latency",
-      "High-frequency compatible",
-      "Cost-effective at scale",
-      "Ideal for signal generation",
+      "Fast inference",
+      "Ideal for simple signals",
+      "Low-cost experimentation",
+      "Custom cutoff date",
     ],
     highlight: false,
-    cta: "Start Free",
+    cta: "Get Started",
   },
   {
     name: "Pitinf-Medium",
-    size: "<100B params",
+    price: "$50 / MTokens input",
+    note: "Output tokens free",
     icon: Gauge,
-    description: "Balanced performance for general trading workflows, research, and portfolio analysis.",
+    description:
+      "Reliable model for basic reasoning tasks, research workflows, and general financial analysis.",
     features: [
-      "Optimal price-performance",
-      "Complex reasoning tasks",
-      "Multi-asset analysis",
-      "Research & backtesting",
+      "Basic reasoning capabilities",
+      "Good price–performance balance",
+      "Suitable for research & analysis",
+      "Custom cutoff date",
     ],
-    highlight: true,
-    cta: "Most Popular",
+    highlight: false,
+    cta: "Choose Medium",
   },
   {
     name: "Pitinf-Large",
-    size: ">500B params",
+    price: "$200 / MTokens input",
+    note: "Output tokens free",
     icon: Rocket,
-    description: "Frontier-level reasoning for complex financial analysis and institutional applications.",
+    description:
+      "State-of-the-art reasoning capabilities designed for complex financial analysis, without memorization bias.",
     features: [
-      "State-of-the-art accuracy",
-      "Deep financial reasoning",
-      "Custom fine-tuning available",
-      "Enterprise SLA & support",
+      "Frontier-level reasoning",
+      "No memorization bias",
+      "Institutional-grade performance",
+      "Custom cutoff date",
     ],
-    highlight: false,
-    cta: "Contact Sales",
+    highlight: true,
+    cta: "Recommended",
   },
 ];
 
 export const ModelsSection = () => {
   return (
-    <section id="models" className="relative py-24 md:py-32">
+    <section id="pricing" className="relative py-24 md:py-32">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <motion.div
@@ -60,18 +66,17 @@ export const ModelsSection = () => {
           className="mx-auto mb-16 max-w-3xl text-center"
         >
           <span className="mb-4 inline-block text-sm font-medium uppercase tracking-wider text-primary">
-            Model Tiers
+            Pricing
           </span>
           <h2 className="mb-6 text-3xl font-bold md:text-5xl">
-            Choose Your <span className="gradient-text">PiT Model</span>
+            Simple, Transparent <span className="gradient-text">Token Pricing</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Three model tiers designed for different use cases, from high-frequency 
-            trading to complex institutional analysis.
+            Pay only for input tokens. Output tokens are free across all Pitinf models.
           </p>
         </motion.div>
 
-        {/* Model Cards */}
+        {/* Pricing Cards */}
         <div className="grid gap-8 md:grid-cols-3">
           {models.map((model, index) => (
             <motion.div
@@ -95,13 +100,16 @@ export const ModelsSection = () => {
               <div className="mb-6">
                 <div
                   className={`mb-4 flex h-14 w-14 items-center justify-center rounded-xl ${
-                    model.highlight ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary"
+                    model.highlight
+                      ? "bg-primary text-primary-foreground"
+                      : "bg-primary/10 text-primary"
                   }`}
                 >
                   <model.icon className="h-7 w-7" />
                 </div>
                 <h3 className="mb-1 text-2xl font-bold">{model.name}</h3>
-                <p className="font-mono text-sm text-muted-foreground">{model.size}</p>
+                <p className="text-lg font-semibold">{model.price}</p>
+                <p className="text-sm text-muted-foreground">{model.note}</p>
               </div>
 
               <p className="mb-6 text-muted-foreground">{model.description}</p>
@@ -136,7 +144,7 @@ export const ModelsSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 text-center text-sm text-muted-foreground"
         >
-          All models use a January 2020 temporal cutoff to ensure zero lookahead bias for post-2020 financial data.
+          All models support a configurable temporal cutoff date, adjustable per deployment or dataset.
         </motion.p>
       </div>
     </section>
