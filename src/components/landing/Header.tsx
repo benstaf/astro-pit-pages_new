@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 
 const navItems = [
   { label: "Problem", href: "#problem" },
-  { label: "Models", href: "#models" },
   { label: "Benchmarks", href: "#benchmarks" },
   { label: "Pricing", href: "#pricing" },
   { label: "Blog", href: "#blog" },
@@ -49,7 +48,7 @@ export const Header = () => {
           {/* Desktop CTA */}
           <div className="hidden items-center gap-4 md:flex">
             <a
-              href="https://github.com"
+              href="https://github.com/benstaf/lookaheadbench"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground transition-colors hover:text-foreground"
