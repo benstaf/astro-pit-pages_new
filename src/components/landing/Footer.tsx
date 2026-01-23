@@ -60,7 +60,7 @@ export const Footer = () => {
           </div>
 
           {/* Contact & Map */}
-          <div className="rounded-2xl border border-border bg-secondary/30 p-8">
+          <div id="contact" className="rounded-2xl border border-border bg-secondary/30 p-8">
             <h3 className="mb-4 text-2xl font-bold">Contact Us</h3>
             <div className="mb-4 space-y-2">
               <p className="text-muted-foreground">
