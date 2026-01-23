@@ -17,7 +17,7 @@ const models = [
       "Custom cutoff date",
     ],
     highlight: false,
-    cta: "Get Started",
+    cta: "Choose Small",
   },
     {
   name: "Pitinf-Medium",
@@ -49,7 +49,7 @@ const models = [
     "Custom cutoff date",
   ],
   highlight: true,
-  cta: "Recommended",
+  cta: "Choose Large",
 }
 ];
 
