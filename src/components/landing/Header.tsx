@@ -8,6 +8,7 @@ const navItems = [
   { label: "Benchmarks", href: "#benchmarks" },
   { label: "Pricing", href: "#pricing" },
   { label: "Blog", href: "#blog" },
+  { label: "Contact", href: "#contact" },
 ];
 
 export const Header = () => {
