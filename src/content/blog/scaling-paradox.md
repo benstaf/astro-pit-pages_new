@@ -1,74 +1,116 @@
 ---
-title: "The Scaling Paradox: Why Bigger Models Fail at Finance"
-excerpt: "Our research reveals a counterintuitive finding: larger LLMs show greater alpha decay. Here's why model size can hurt financial predictions."
+title: "The Scaling Paradox Revisited: When Model Scale Meets Look-Ahead Bias"
+excerpt: "Larger LLMs don’t fail at finance—but look-ahead bias makes it look that way. Here’s what Look-Ahead-Bench actually shows."
 category: "Research"
-date: "2025-01-10"
-readTime: "6 min read"
+date: "2026-01-23"
+readTime: "4 min read"
 featured: false
-author: "Dr. Sarah Chen"
+author: "PiT-Inference Research Team"
 ---
 
-# The Scaling Paradox: Why Bigger Models Fail at Finance
+# The Scaling Paradox Revisited: When Model Scale Meets Look-Ahead Bias
 
-In the world of AI, bigger has traditionally meant better. GPT-4 outperforms GPT-3. Llama-70B beats Llama-7B. The scaling laws seem immutable.
+In modern AI, scaling laws have become almost axiomatic: more parameters, more data, better performance. From GPT-3 to GPT-4, from 7B to 70B parameters, scale usually wins.
 
-But our research reveals a troubling exception: **for financial prediction, larger models can actually perform worse**.
+Yet when large language models are applied to **financial prediction**, this intuition often appears to break down. Larger models sometimes show **worse out-of-sample performance** than smaller ones, particularly in backtests.
 
-## The Counterintuitive Finding
+At first glance, this looks like a paradox. Our work shows it isn’t.
 
-When we evaluated 35+ LLMs on our Look-Ahead-Bench, we expected larger models to show better financial reasoning. Instead, we found the opposite:
+The issue is not scale itself—it’s **look-ahead bias**.
 
-- **Smaller models** (under 10B parameters) showed average alpha decay of **-8.2pp**
-- **Medium models** (10-100B parameters) showed average alpha decay of **-15.4pp**  
-- **Large models** (100B+ parameters) showed average alpha decay of **-22.1pp**
+## What We Actually Measured
 
-The correlation between model size and alpha decay was **0.73**—a remarkably strong relationship.
+In *Look-Ahead-Bench*, we evaluate LLMs inside a **realistic, end-to-end trading workflow**, rather than isolated Q&A tasks. Using agentic trading systems built on the widely adopted AI Hedge Fund framework, we compare performance across two temporally distinct market periods.
 
-## Why This Happens
+To quantify temporal robustness, we introduce **alpha decay**:
 
-The explanation lies in how LLMs learn. Larger models have more capacity to memorize specific facts from their training data. This includes:
+> **Alpha Decay = Out-of-sample alpha − In-sample alpha**
 
-- Specific stock prices on specific dates
-- Earnings report outcomes
-- Merger announcements
-- Market crash timelines
+Large negative decay indicates that a model’s apparent skill does not survive once it is deployed beyond its knowledge cutoff.
 
-A 7B parameter model might learn general patterns about market behavior. A 70B parameter model can memorize that "NVIDIA stock doubled between January and June 2023."
+## The Empirical Pattern
 
-## Implications for Quant Finance
+When evaluated on Look-Ahead-Bench, we observe a striking divergence:
 
-This finding has significant implications:
+- **Standard foundation models** (e.g., Llama 3.1, DeepSeek 3.2) show **substantial negative alpha decay**, often exceeding **−15 percentage points**.
+- **Point-in-Time (PiT) models**, trained with strict temporal cutoffs, show **stable or improving performance** across periods.
+- Crucially, **PiT models benefit from scale**, while standard models often do not.
 
-### 1. Model Selection
+This creates the illusion of a “scaling paradox.”
 
-Funds using LLMs for alpha generation should consider **smaller, specialized models** rather than frontier-scale general-purpose models.
+But the paradox is conditional.
 
-### 2. Backtesting
+## Why Larger Standard Models Appear to Perform Worse
 
-Any backtest using a standard LLM is likely **overstating performance** due to temporal leakage.
+Larger LLMs have greater capacity to absorb and retain information from their training data. In finance, this includes:
 
-### 3. Risk Management
+- Retrospective explanations of market events  
+- Explicit statements of stock performance (“NVDA surged 190% in 2023”)  
+- Earnings outcomes, crises, and macro narratives  
 
-Risk models built on contaminated predictions will systematically **underestimate tail risks**.
+When such models are evaluated on historical periods that overlap with their training distribution, they can appear extraordinarily skillful—not because they are predicting, but because they are **recalling**.
 
-## The PiT Solution
+As model size increases, this memorization effect becomes stronger.
 
-Our Point-in-Time (PiT) models address this by ensuring strict temporal cutoffs during training. A PiT model trained with a January 2020 cutoff has never seen any data that references events after that date.
+When the evaluation shifts to a genuinely future period—beyond the model’s knowledge cutoff—those strong internal priors become liabilities. The model’s confidence remains high, but its assumptions no longer match reality, leading to sharp performance collapse.
 
-The result? Consistent performance across time periods:
+This is not evidence that large models are worse at finance.  
+It is evidence that **look-ahead bias scales with model size unless explicitly controlled**.
 
-| Model | P1 Alpha | P2 Alpha | Decay |
-|-------|----------|----------|-------|
-| Pitinf-Small | +15.23% | +14.78% | -0.45pp |
-| Pitinf-Medium | +18.34% | +17.89% | -0.45pp |
-| Pitinf-Large | +21.67% | +20.92% | -0.75pp |
+## Scale Without Contamination Tells a Different Story
 
-Notice that even our largest model maintains stable performance—because scale without contamination is still beneficial.
+Point-in-Time models remove future information by construction. A PiT model trained with a January 2020 cutoff has never seen:
 
-## Conclusion
+- Post-2020 earnings outcomes  
+- Later price trajectories  
+- Retrospective analyses of recent market regimes  
 
-The scaling paradox teaches us that **more parameters are only valuable if the training data is clean**. For financial applications, temporal hygiene matters more than model size.
+Once this “future memory” is removed, scaling behaves as expected:
+
+| Model | P1 Alpha | P2 Alpha | Alpha Decay |
+|------|---------:|---------:|------------:|
+| Pitinf-Small | −0.25pp | +0.06pp | +0.31pp |
+| Pitinf-Medium | +2.44pp | +3.29pp | +0.85pp |
+| Pitinf-Large | +6.02pp | +7.32pp | +1.30pp |
+
+Here, larger models demonstrate **better reasoning, synthesis, and generalization**, rather than better recall.
+
+In other words:  
+**scale helps once temporal leakage is removed.**
+
+## Implications for Quantitative Finance
+
+### 1. Backtests Are Not Neutral
+Backtesting LLM-driven strategies without temporal controls can dramatically overstate performance—especially for large models.
+
+### 2. Apparent Alpha Can Be Illusory
+High in-sample returns may reflect memorized historical outcomes rather than transferable skill.
+
+### 3. Model Selection Requires Temporal Awareness
+Choosing a smaller model is not a principled fix. Choosing a **temporally clean model** is.
+
+### 4. Scaling Is Not the Enemy
+The true lesson is not “don’t scale,” but **“don’t scale contamination.”**
+
+## The Role of Look-Ahead-Bench
+
+Look-Ahead-Bench is designed as a **diagnostic**, not a leaderboard. Its goal is to distinguish:
+
+- Genuine financial reasoning  
+from  
+- Performance inflated by future information  
+
+By embedding models in realistic trading workflows and measuring performance decay across regimes, the benchmark makes temporal bias visible—and measurable.
+
+## Takeaway
+
+The so-called scaling paradox is not a failure of large language models in finance.  
+It is a failure of **evaluation without temporal hygiene**.
+
+When future information leaks into training, bigger models remember more—and fail harder when reality changes. When that leakage is removed, scale once again becomes an advantage.
+
+**In finance, time—not size—is the first principle.**
 
 ---
 
-*Want to learn more? Read our [full paper](/research) or [try our API](/pricing).*
+*For full technical details, benchmarks, and code, see the Look-Ahead-Bench repository.*
