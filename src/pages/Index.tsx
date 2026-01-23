@@ -19,7 +19,6 @@ const Index = () => {
         <BenchmarkChart />
         <HowItWorks />
         <ModelsSection />
-        <PricingSection />
         <BlogSection />
       </main>
       <Footer />
