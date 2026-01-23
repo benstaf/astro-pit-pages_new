@@ -1,3 +1,4 @@
+import { useEffect } from "react";  // ← Added
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, User, Tag } from "lucide-react";
@@ -20,6 +21,13 @@ const BlogPost = () => {
   const relatedPosts = allPosts
     .filter((p) => p.category === post.category && p.slug !== post.slug)
     .slice(0, 2);
+
+  // ← Scroll to top whenever the slug changes (i.e., new blog post loads)
+  // This only affects blog posts — no impact on other pages
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    // Use window.scrollTo(0, 0) if you prefer instant scroll (no animation)
+  }, [slug]);
 
   return (
     <div className="min-h-screen bg-background">
