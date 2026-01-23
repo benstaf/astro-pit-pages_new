@@ -4,7 +4,7 @@ import { AlertTriangle, TrendingUp, Clock, Brain } from "lucide-react";
 const problems = [
   {
     icon: Brain,
-    title: "Look-Ahead Bias",
+    title: "Temporal Leakage",
     description:
       "Standard LLMs are trained on internet-scale data that extends past backtest cutoffs. What looks like intelligence is often recall.",
   },
@@ -22,7 +22,7 @@ const problems = [
   },
   {
     icon: Clock,
-    title: "Temporal Leakage",
+    title: "Backtesting Contamination",
     description:
       "Chronological splits don’t matter in backtesting, if the LLM used already knows what happened next.",
   },
@@ -46,12 +46,12 @@ export const ProblemSection = () => {
             The Problem
           </span>
           <h2 className="mb-6 text-3xl font-bold md:text-5xl">
-            Your LLM Is <span className="gradient-text">Remembering</span>
+            Your LLM Has <span className="gradient-text">Look Ahead Bias</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Backtests assume the evaluation period is unseen.
-            Standard pretrained LLMs break that assumption. The result isn’t prediction—
-            it’s recall disguised as alpha.
+            Backtesting assumes a clean separation between past and future.
+LLMs blur that line.
+Their apparent performance often comes from memorization, not real forecasting ability.
           </p>
         </motion.div>
 
