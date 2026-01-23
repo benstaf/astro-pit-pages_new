@@ -19,23 +19,22 @@ const models = [
     highlight: false,
     cta: "Get Started",
   },
-  {
-    name: "Pitinf-Medium",
-    price: "$50 / MTokens input",
-    note: "Output tokens free",
-    icon: Gauge,
-    description:
-      "Reliable model for basic reasoning tasks, research workflows, and general financial analysis.",
-   features: [
-  "Frontier-level reasoning",
-  "Agentic workflows & tool orchestration",
-  "No memorization bias",
-  "Institutional-grade performance",
-  "Custom cutoff date",
-   ],
-    highlight: false,
-    cta: "Choose Medium",
-  },
+    {
+  name: "Pitinf-Medium",
+  price: "$50 / MTokens input",
+  note: "Output tokens free",
+  icon: Gauge,
+  description:
+    "Balanced model for basic reasoning tasks, research workflows, and general financial analysis.",
+  features: [
+    "Basic reasoning capabilities",
+    "Good price–performance balance",
+    "No memorization bias",
+    "Custom cutoff date",
+  ],
+  highlight: false,
+  cta: "Choose Medium",
+},
   {
   name: "Pitinf-Large",
   price: "$200 / MTokens input",
@@ -47,7 +46,6 @@ const models = [
     "Frontier-level reasoning",
     "Agentic workflows & tool orchestration",
     "No memorization bias",
-    "Institutional-grade performance",
     "Custom cutoff date",
   ],
   highlight: true,
