@@ -4,8 +4,8 @@ import { Database, Clock, Shield, LineChart } from "lucide-react";
 const steps = [
   {
     icon: Clock,
-    title: "Temporal Cutoff",
-    description: "All training data strictly ends at January 2020, ensuring the model has never seen any post-2020 market data.",
+    title: "Effective Temporal Cutoff",
+    description: "Training data is capped at a use-case–defined cutoff date, so the model only practically sees what was available at that point in time.",
   },
   {
     icon: Database,
@@ -43,8 +43,7 @@ export const HowItWorks = () => {
             How <span className="gradient-text">PiT-Inference</span> Works
           </h2>
           <p className="text-lg text-muted-foreground">
-            A rigorous approach to eliminating lookahead bias through temporal isolation 
-            and comprehensive verification.
+            A clean, repeatable way to eliminate lookahead bias through strict temporal isolation.
           </p>
         </motion.div>
 
