@@ -9,6 +9,12 @@ const problems = [
       "Standard LLMs are trained on internet-scale data that extends past backtest cutoffs. What looks like intelligence is often recall.",
   },
   {
+    icon: Clock,
+    title: "Backtesting Contamination",
+    description:
+      "Chronological splits don’t matter in backtesting, if the LLM used already knows what happened next.",
+  },
+  {
     icon: TrendingUp,
     title: "Fake Alpha",
     description:
@@ -19,12 +25,6 @@ const problems = [
     title: "Bigger Models, Bigger Losses",
     description:
       "Scaling increases memorization. Larger models often show higher backtest alpha—and faster out-of-sample decay.",
-  },
-  {
-    icon: Clock,
-    title: "Backtesting Contamination",
-    description:
-      "Chronological splits don’t matter in backtesting, if the LLM used already knows what happened next.",
   },
 ];
 
