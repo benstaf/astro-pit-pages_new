@@ -46,7 +46,7 @@ export const ProblemSection = () => {
             The Problem
           </span>
           <h2 className="mb-6 text-3xl font-bold md:text-5xl">
-            Your LLM Has <span className="gradient-text">Look Ahead Bias</span>
+            Your LLM Brings <span className="gradient-text">Look Ahead Bias</span>
           </h2>
           <p className="text-lg text-muted-foreground">
             Backtesting assumes a clean separation between past and future.
