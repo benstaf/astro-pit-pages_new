@@ -8,8 +8,6 @@ featured: false
 author: "PiT-Inference Research Team"
 ---
 
-# The Scaling Paradox Revisited: When Model Scale Meets Look-Ahead Bias
-
 In modern AI, scaling laws have become almost axiomatic: more parameters, more data, better performance. From GPT-3 to GPT-4, from 7B to 70B parameters, scale usually wins.
 
 Yet when large language models are applied to **financial prediction**, this intuition often appears to break down. Larger models sometimes show **worse out-of-sample performance** than smaller ones, particularly in backtests.
