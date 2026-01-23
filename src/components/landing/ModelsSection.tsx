@@ -150,7 +150,7 @@ export const ModelsSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="mt-12 text-center text-sm text-muted-foreground"
         >
-          All models support a configurable temporal cutoff date, adjustable per deployment or dataset.
+          All models support a configurable temporal cutoff date, adjustable per deployment.
         </motion.p>
       </div>
 {/* API Code Example */}
