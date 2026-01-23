@@ -4,7 +4,7 @@ import { Database, Clock, Shield, LineChart } from "lucide-react";
 const steps = [
   {
     icon: Clock,
-    title: "Effective Temporal Cutoff",
+    title: "Effective Cutoff",
     description: "Training data is capped at a use-case–defined cutoff date, so the model only practically sees what was available at that point in time.",
   },
   {
