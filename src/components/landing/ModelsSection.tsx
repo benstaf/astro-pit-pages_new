@@ -37,20 +37,22 @@ const models = [
     cta: "Choose Medium",
   },
   {
-    name: "Pitinf-Large",
-    price: "$200 / MTokens input",
-    note: "Output tokens free",
-    icon: Rocket,
-    description:
-  "State-of-the-art reasoning model for complex financial analysis and agentic workflows, without memorization bias.",
-      "Frontier-level reasoning",
-      "No memorization bias",
-      "Institutional-grade performance",
-      "Custom cutoff date",
-    ],
-    highlight: true,
-    cta: "Recommended",
-  },
+  name: "Pitinf-Large",
+  price: "$200 / MTokens input",
+  note: "Output tokens free",
+  icon: Rocket,
+  description:
+    "State-of-the-art reasoning model built for complex financial analysis and agentic workflows, without memorization bias.",
+  features: [
+    "Frontier-level reasoning",
+    "Agentic workflows & tool orchestration",
+    "No memorization bias",
+    "Institutional-grade performance",
+    "Custom cutoff date",
+  ],
+  highlight: true,
+  cta: "Recommended",
+}
 ];
 
 export const ModelsSection = () => {
