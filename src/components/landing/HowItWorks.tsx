@@ -5,7 +5,7 @@ const steps = [
   {
     icon: Clock,
     title: "Effective Cutoff Date",
-    description: "You choose a cutoff date and a use-case. In practice, the model only knows what came before it."  },
+    description: "You choose a cutoff date and a use case. For that context, the Pitinf model only knows what came before."  },
   {
     icon: Database,
     title: "Clean Data Pipeline",
