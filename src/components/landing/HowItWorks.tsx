@@ -89,40 +89,6 @@ export const HowItWorks = () => {
             ))}
           </div>
         </div>
-
-        {/* Timeline Visual */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="mx-auto mt-20 max-w-3xl"
-        >
-          <div className="rounded-xl border border-border bg-card/50 p-6">
-            <h4 className="mb-4 text-center text-sm font-medium uppercase tracking-wider text-muted-foreground">
-              Temporal Boundary
-            </h4>
-            <div className="relative flex items-center justify-between">
-              <div className="text-center">
-                <div className="mb-2 h-3 w-3 rounded-full bg-primary" />
-                <span className="text-xs text-muted-foreground">Training Data</span>
-                <p className="font-mono text-sm">Pre-2020</p>
-              </div>
-              <div className="flex-1 mx-4 h-1 bg-gradient-to-r from-primary to-accent rounded" />
-              <div className="text-center">
-                <div className="mb-2 h-3 w-3 rounded-full bg-accent" />
-                <span className="text-xs text-muted-foreground">Cutoff</span>
-                <p className="font-mono text-sm font-bold text-accent">Jan 2020</p>
-              </div>
-              <div className="flex-1 mx-4 h-1 bg-muted rounded" />
-              <div className="text-center">
-                <div className="mb-2 h-3 w-3 rounded-full bg-muted" />
-                <span className="text-xs text-muted-foreground">Evaluation</span>
-                <p className="font-mono text-sm">Post-2020</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
