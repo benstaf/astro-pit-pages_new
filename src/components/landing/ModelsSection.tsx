@@ -180,7 +180,7 @@ export const ModelsSection = () => {
         {"\n"}
         {"  "}api_key=<span className="text-accent">"your-api-key"</span>,
         {"\n"}
-        {"  "}base_url=<span className="text-accent">"https://pitinference.com/API"</span>
+        {"  "}base_url=<span className="text-accent">"https://pitinference.com/api"</span>
         {"\n"}
         )
         {"\n\n"}
@@ -188,7 +188,7 @@ export const ModelsSection = () => {
         {"\n"}
         response = client.responses.create(
         {"\n"}
-        {"  "}model=<span className="text-accent">"pitinf-medium"</span>,
+        {"  "}model=<span className="text-accent">"pitinf-large"</span>,
         {"\n"}
         {"  "}input=<span className="text-accent">"Analyze AAPL earnings outlook as of Jan 15, 2024"</span>,
         {"\n"}
