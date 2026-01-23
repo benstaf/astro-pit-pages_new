@@ -20,7 +20,6 @@ const Index = () => {
         <BenchmarkChart />
         <HowItWorks />
         <PricingSection />
-        <ResearchSection />
         <BlogSection />
       </main>
       <Footer />
