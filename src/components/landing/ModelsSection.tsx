@@ -147,6 +147,58 @@ export const ModelsSection = () => {
           All models support a configurable temporal cutoff date, adjustable per deployment or dataset.
         </motion.p>
       </div>
+{/* API Code Example */}
+<motion.div
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  viewport={{ once: true }}
+  transition={{ duration: 0.5, delay: 0.4 }}
+  className="mx-auto mt-16 max-w-3xl"
+>
+  <h3 className="mb-2 text-center text-lg font-semibold">Quick Start</h3>
+  <p className="mb-4 text-center text-sm text-muted-foreground">
+    Drop-in replacement for the OpenAI API — just change the base URL.
+  </p>
+
+  <div className="overflow-hidden rounded-xl border border-border bg-card">
+    <div className="flex items-center gap-2 border-b border-border bg-secondary/30 px-4 py-3">
+      <div className="h-3 w-3 rounded-full bg-destructive/50" />
+      <div className="h-3 w-3 rounded-full bg-yellow-500/50" />
+      <div className="h-3 w-3 rounded-full bg-green-500/50" />
+      <span className="ml-2 font-mono text-xs text-muted-foreground">
+        example.py
+      </span>
+    </div>
+
+    <pre className="overflow-x-auto p-4 font-mono text-sm">
+      <code className="text-foreground">
+        <span className="text-primary">from</span> openai <span className="text-primary">import</span> OpenAI
+        {"\n\n"}
+        <span className="text-muted-foreground"># OpenAI-compatible client</span>
+        {"\n"}
+        client = OpenAI(
+        {"\n"}
+        {"  "}api_key=<span className="text-accent">"your-api-key"</span>,
+        {"\n"}
+        {"  "}base_url=<span className="text-accent">"https://pitinference.com/API"</span>
+        {"\n"}
+        )
+        {"\n\n"}
+        <span className="text-muted-foreground"># Point-in-time inference</span>
+        {"\n"}
+        response = client.responses.create(
+        {"\n"}
+        {"  "}model=<span className="text-accent">"pitinf-medium"</span>,
+        {"\n"}
+        {"  "}input=<span className="text-accent">"Analyze AAPL earnings outlook as of Jan 15, 2024"</span>,
+        {"\n"}
+        )
+      </code>
+    </pre>
+  </div>
+</motion.div>
+
+      
     </section>
   );
 };
