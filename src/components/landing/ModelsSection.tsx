@@ -122,16 +122,22 @@ export const ModelsSection = () => {
                   </li>
                 ))}
               </ul>
-
-              <Button
-                className={`w-full ${
-                  model.highlight
-                    ? "bg-primary hover:bg-primary/90"
-                    : "bg-secondary hover:bg-secondary/80"
-                }`}
-              >
-                {model.cta}
-              </Button>
+              <a
+  href="https://forms.gle/GmyGEhxESSrNBTVP8"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="block"
+>
+  <Button
+    className={`w-full ${
+      model.highlight
+        ? "bg-primary hover:bg-primary/90"
+        : "bg-secondary hover:bg-secondary/80"
+    }`}
+  >
+    {model.cta}
+  </Button>
+</a>     
             </motion.div>
           ))}
         </div>
