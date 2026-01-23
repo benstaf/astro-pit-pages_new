@@ -5,7 +5,7 @@ const steps = [
   {
     icon: Clock,
     title: "Effective Cutoff Date",
-    description: "You choose a cutoff date and a use case. For that context, the Pitinf LLM only knows what came before."  },
+    description: "You choose a cutoff date and a use case, for which the Pitinf LLM only knows what came before."  },
   {
     icon: Database,
     title: "Clean Data Pipeline",
