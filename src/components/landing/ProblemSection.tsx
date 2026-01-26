@@ -118,15 +118,15 @@ Their apparent performance often comes from memorization, not real forecasting a
               <div className="space-y-3">
                 <div className="flex items-center justify-between rounded-lg bg-secondary/50 p-3">
                   <span className="text-sm">Pitinf-Large</span>
-                  <span className="font-mono text-accent">+0.47pp</span>
+                  <span className="font-mono text-accent">+1.30pp</span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg bg-secondary/50 p-3">
                   <span className="text-sm">Pitinf-Medium</span>
-                  <span className="font-mono text-accent">+1.23pp</span>
+                  <span className="font-mono text-accent">+0.85pp</span>
                 </div>
                 <div className="flex items-center justify-between rounded-lg bg-secondary/50 p-3">
                   <span className="text-sm">Pitinf-Small</span>
-                  <span className="font-mono text-accent">+0.89pp</span>
+                  <span className="font-mono text-accent">+0.31pp</span>
                 </div>
               </div>
               <p className="mt-4 text-sm text-muted-foreground">
