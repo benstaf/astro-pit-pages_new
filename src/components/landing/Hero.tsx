@@ -112,7 +112,7 @@ export const Hero = () => {
               className="group w-full sm:w-auto text-sm sm:text-base px-6 sm:px-8"
             >
               <a
-                href="https://github.com/benstaf/lookaheadbench"
+                href="https://lookaheadbench.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
