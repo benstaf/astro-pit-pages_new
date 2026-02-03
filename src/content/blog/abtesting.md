@@ -60,6 +60,10 @@ Randomized A/B testing exists precisely to resolve this ambiguity.
 
 ## Our Proposal: A Clinical Phase-3-Style A/B Test for PiT-LLMs
 
+![Randomized A/B Test Design for PiT-LLMs](https://d329ms1y997xa5.cloudfront.net/accounts/75585/images/RCT2.png)
+
+*Figure: Randomized, population-level A/B test isolating point-in-time integrity while preserving IP on both sides.*
+
 At PiT-Inference, we propose an open, trustless validation protocol inspired by **Phase-3 clinical trials and large-scale tech A/B tests**—designed explicitly for quantitative finance.
 
 ### The Protocol
