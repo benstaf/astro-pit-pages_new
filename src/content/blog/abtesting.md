@@ -11,9 +11,7 @@ author: "PiT-Inference Team"
 Look-ahead bias is the silent killer of LLM-based quantitative strategies.  
 It inflates backtests, misleads researchers, and erodes real-world performance—all while hiding in the complexity of modern data pipelines.
 
-We designed **Point-in-Time LLMs (PiT-LLMs)** to eliminate this bias at its root, ensuring models only use information that was truly available at the historical moment of inference.
-
-But how do we prove this—**without revealing proprietary training details or requiring quants to expose their alpha**?
+We designed **Point-in-Time LLMs (PiT-LLMs)** to eliminate this bias, but how do we prove this—**without revealing proprietary training details or requiring quants to expose their alpha**?
 
 The answer lies in the methodology that powered Silicon Valley’s dominance: **randomized A/B testing**.
 
