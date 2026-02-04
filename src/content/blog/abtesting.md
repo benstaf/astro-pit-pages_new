@@ -1,6 +1,6 @@
 ---
 title: "The A/B Test for Alpha: Bringing Silicon Valley’s Validation Engine to Quantitative Finance"
-excerpt: "A randomized, trustless protocol to validate Point-in-Time LLMs—preserving IP while proving look-ahead bias elimination with Silicon Valley-level rigor."
+excerpt: "A randomized controlled trial to validate Point-in-Time LLMs—preserving IP while proving look-ahead bias elimination with Silicon Valley-level rigor."
 category: "Research"
 date: "2026-02-04"
 readTime: "6 min read"
