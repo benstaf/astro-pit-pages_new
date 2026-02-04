@@ -4,7 +4,7 @@ excerpt: "Pitinf is a new family of point-in-time large language models built fo
 category: "Announcements"
 date: "2026-01-22"
 readTime: "2 min read"
-featured: true
+featured: false
 author: "PiT-Inference Team"
 ---
 
