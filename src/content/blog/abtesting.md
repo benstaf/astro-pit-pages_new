@@ -1,6 +1,6 @@
 ---
 title: "The A/B Test for Alpha: Bringing Silicon Valley’s Validation Engine to Quantitative Finance"
-excerpt: "A randomized, trustless protocol to validate Point-in-Time LLMs—preserving IP while proving look-ahead bias elimination with Silicon Valley-style rigor."
+excerpt: "A randomized, trustless protocol to validate Point-in-Time LLMs—preserving IP while proving look-ahead bias elimination with Silicon Valley-level rigor."
 category: "Research"
 date: "2026-02-04"
 readTime: "6 min read"
@@ -60,7 +60,7 @@ Randomized A/B testing exists precisely to resolve this ambiguity.
 
 ![Randomized A/B Test Design for PiT-LLMs](https://d329ms1y997xa5.cloudfront.net/accounts/75585/images/RCT2.png)
 
-*Figure: Randomized, population-level A/B test isolating point-in-time integrity while preserving IP on both sides.*
+*Figure: Randomized, population-level A/B test preserving IP on both sides.*
 
 At PiT-Inference, we propose an open, trustless validation protocol inspired by **Phase-3 clinical trials and large-scale tech A/B tests**—designed explicitly for quantitative finance.
 
@@ -115,7 +115,7 @@ What this protocol introduces is a **new validation primitive**:
 This is not about replacing backtests.  
 It is about answering a different question—one backtests cannot answer reliably:
 
-> *Does this model reduce look-ahead bias in practice?*
+> *Does this LLM API reduce look-ahead bias in practice?*
 
 That question demands Silicon Valley-grade rigor.
 
