@@ -1,6 +1,6 @@
 ---
 
-title: "The Balyasny–OpenAI 'Superforecaster' Case Study: Look-Ahead Bias is the elephant in the room"
+title: "The Balyasny–OpenAI 'Superforecaster' Case Study - Look-Ahead Bias is the elephant in the room"
 excerpt: "OpenAI and Balyasny presented a seemingly powerful AI 'Superforecaster' for merger arbitrage—but without clear point-in-time validation, the key question remains: are the results free from look-ahead bias?"
 category: "Analysis"
 date: "2026-03-17"
