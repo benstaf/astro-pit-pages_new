@@ -7,11 +7,7 @@ date: "2026-03-17"
 readTime: "3 min read"
 featured: false
 author: "PiT-Inference Team"
-----------------------------
-
-![Balyasny OpenAI Look-Ahead Bias Illustration](https://www.pitinference.com/balyasnyopenai_image.png)
-*Silicon Valley meets Wall Street—only to encounter the “elephant in the room”: look-ahead bias.*
-
+---
 
 The recent case study from OpenAI highlighting its partnership with Balyasny Asset Management introduces an ambitious concept: an AI-powered **“Superforecaster”** designed to transform merger arbitrage research.
 
@@ -20,6 +16,8 @@ The promise is compelling—LLMs ingesting vast financial datasets, updating pro
 But beneath the surface lies a critical question that remains unanswered:
 
 **Were these forecasts validated without look-ahead bias?**
+
+![Balyasny OpenAI Look-Ahead Bias Illustration](https://pitinference.com/balyasnyopenai_image.png)
 
 ---
 
