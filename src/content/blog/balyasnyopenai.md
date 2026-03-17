@@ -53,7 +53,7 @@ This creates a structural issue:
 
 In finance, this distinction is critical:
 
-> **Knowing the future is not the same as predicting it.**
+> **Remembering the future is not the same as predicting it.**
 
 ---
 
