@@ -7,6 +7,7 @@ date: "2026-03-17"
 readTime: "3 min read"
 featured: false
 author: "PiT-Inference Team"
+image: "https://www.pitinference.com/balyasnyopenai_image.png"
 ---
 
 The recent case study from OpenAI highlighting its partnership with Balyasny Asset Management introduces an ambitious concept: an AI-powered **“Superforecaster”** designed to transform merger arbitrage research.
