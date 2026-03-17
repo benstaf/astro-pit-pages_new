@@ -16,7 +16,7 @@ The promise is compelling—LLMs ingesting vast financial datasets, updating pro
 
 But beneath the surface lies a critical question that remains unanswered:
 
-**Were these forecasts validated without look-ahead bias?**
+**Was this forecasting system backtested without look-ahead bias?**
 
 ![Balyasny OpenAI Look-Ahead Bias Illustration](https://pitinference.com/balyasnyopenai_image.png)
 
@@ -57,11 +57,11 @@ In finance, this distinction is critical:
 
 ---
 
-## Why “Superforecasting” Requires Temporal Integrity
+## Why backtesting “Superforecasters” Requires Temporal Integrity
 
 For any forecasting system—AI or human—the benchmark is simple: performance must hold **out-of-sample** under strict temporal constraints.
 
-This requires:
+Tlhis requires:
 
 * Data aligned to **point-in-time availability**
 * Clear separation between **training and evaluation periods**
@@ -102,7 +102,7 @@ Faster analysis, structured insights, and better information retrieval are meani
 
 ## Why Point-in-Time LLMs Matter
 
-This is precisely the problem addressed by approaches like **PiT-Inference**.
+This is precisely the problem addressed by our approach here at **PiT-Inference**.
 
 Point-in-Time LLMs are designed to enforce strict temporal boundaries:
 
@@ -122,7 +122,7 @@ Without such constraints, look-ahead bias is not an edge case—it is the defaul
 
 ## Conclusion: The Question That Defines Everything
 
-The Balyasny–OpenAI case study is impressive as an engineering achievement.
+The Balyasny–OpenAI case study is interesting as an engineering achievement.
 
 But as a quantitative result, it leaves the most important question unanswered:
 
