@@ -9,7 +9,7 @@ featured: false
 author: "PiT-Inference Team"
 ----------------------------
 
-![Balyasny OpenAI Look-Ahead Bias Illustration](/Balyasnyopenai.png)
+![Balyasny OpenAI Look-Ahead Bias Illustration](/balyasnyopenai_image.png)
 *Silicon Valley meets Wall Street—only to encounter the “elephant in the room”: look-ahead bias.*
 
 
