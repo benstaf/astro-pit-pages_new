@@ -24,9 +24,7 @@ But beneath the surface lies a critical question that remains unanswered:
 
 ## What the Case Study Shows — and What It Doesn’t
 
-According to the report, the system evaluates merger outcomes across multiple dimensions, including forecasting accuracy, reasoning, and robustness.
-
-However, key methodological details are absent:
+In the report, key methodological details are absent:
 
 * No description of **point-in-time data handling**
 * No evidence of **temporal leakage controls**
