@@ -29,8 +29,6 @@ However, key methodological details are absent:
 
 * No description of **point-in-time data handling**
 * No evidence of **temporal leakage controls**
-* No disclosure of **out-of-sample performance**
-* No demonstration of **live or forward testing**
 
 In quantitative finance, these are not optional details—they are the foundation of validity.
 
